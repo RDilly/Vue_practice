@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <h2>My Title</h2>
     {{ names }}
 <ul>
   <li
@@ -25,23 +25,18 @@ v-on:click="onClick"
 
 <script>
 export default {
-  props: ['title'],
 name: 'Names',
 data: () => ({
   name: "",
-  names: [ 
-    "Sophie",
-    "Sadie"
-  ]
 }),
-watch: {
-  names(val) {
-    console.log(val)
+computed: {
+  names() {
+    return this.$store.state.names;
   }
 },
 methods: {
   onClick() {
-    this.names.push(this.name);
+    this.$store.dispatch('slowAddName', this.name);
   }
 }
 

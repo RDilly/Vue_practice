@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Names 
-    title="list of names"
-     />
+       <Names />
   </div>
 </template>
 
@@ -15,9 +13,9 @@ export default {
   name: "App",
   components: {
     Header,
-    Names
-  },
-};
+    Names,
+  }}
+
 </script>
 
 <style></style>
